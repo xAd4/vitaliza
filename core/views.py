@@ -1,34 +1,30 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView
-from contact.models import Contact
-from contact.forms import Contact_form
+from django.views.generic import TemplateView, FormView
+from appointments.forms import Appointment_form
+from appointments.models import Appointment
 
 # Create your views here.
-
 class HomeTemplateView(TemplateView):
     template_name = "core/index.html"
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): # -> This logic allows sent instances-model the model DeppartmentAppointment through that form
         context = super().get_context_data(**kwargs)
-        context['form'] = Contact_form()  # Añadir el formulario al contexto
+        context['form'] = Appointment_form()
         return context
 
     def post(self, request, *args, **kwargs):
-        form = Contact_form(request.POST)
-        if form.is_valid():
-            # Crear una instancia del modelo Contact usando los datos del formulario
-            Contact.objects.create(
-                full_name=form.cleaned_data['full_name'],
-                email=form.cleaned_data['email'],
-                phone_number=form.cleaned_data['phone_number'],
-                message=form.cleaned_data['message']
-            )
-            return redirect(reverse_lazy('home'))  # Redirigir a la URL de éxito
-        else:
-            # Si el formulario no es válido, renderizar de nuevo la página con los errores
-            return self.render_to_response(self.get_context_data(form=form))
+        if not request.user.is_authenticated:
+            return redirect('login') 
 
+        form = Appointment_form(request.POST)
+        if form.is_valid():
+            appointment = form.save(commit=False)
+            appointment.user = request.user
+            appointment.save()
+            return redirect('home')
+        return self.get(request, *args, **kwargs, form=form)
+    
 class AboutTemplateView(TemplateView):
     template_name = "core/about.html"
 class DoctorTemplateView(TemplateView):
