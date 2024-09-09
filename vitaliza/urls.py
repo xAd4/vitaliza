@@ -18,9 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 ## Core URLs
 from core import urls
+## Contact URLs
+from contact import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     ## Core URLs
     path("", include("core.urls")),
+    ## Contact URLs
+    path("get_in_touch/", include("contact.urls")),
 ]

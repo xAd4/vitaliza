@@ -1,0 +1,10 @@
+<form method="post">
+  {% csrf_token %}
+  <div>{{ form.full_name }}</div>
+  <div>{{ form.email }}</div>
+  <div>{{ form.phone_number }}</div>
+  <div>{{ form.message }}</div>
+  <div class="btn_box">
+    <button type="submit">SEND</button>
+  </div>
+</form>
