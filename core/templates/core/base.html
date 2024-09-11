@@ -65,12 +65,6 @@
                     <a class="nav-link" href="{% url 'treatment' %}">Treatment</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'doctor' %}">Doctors</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'testimonial' %}">Testimonial</a>
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                   </li>
                 </ul>
@@ -88,11 +82,23 @@
                     Sign Up
                   </span>
                 </a>
-                <form class="form-inline">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
+                {% if request.user.is_staff %}
+
+                <a href="{% url 'appointment-messages' %}">
+                  <i class="fa fa-database" aria-hidden="true"></i>
+                  <span>
+                    Citas
+                  </span>
+                </a>
+
+                <a href="{% url 'contact-messages' %}">
+                  <i class="fa fa-database" aria-hidden="true"></i>
+                  <span>
+                    Mensajes
+                  </span>
+                </a>
+
+                {% endif %}
               </div>
             </div>
           </nav>
@@ -159,71 +165,15 @@
                 Useful link
               </h5>
               <div class="info_links_menu">
-                <a class="active" href="index.html">
+                <a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">
                   Home
                 </a>
-                <a href="{% url 'treatment' %}">
+                <a class="{% if request.path == '/treatment/' %}active{% endif %}" href="{% url 'treatment' %}">
                   Treatment
                 </a>
-                <a href="{% url 'doctor' %}">
-                  Doctors
-                </a>
-                <a href="{% url 'testimonial' %}">
-                  Testimonial
-                </a>
-                <a href="{% url 'contact' %}">
+                <a class="{% if request.path == '/get_in_touch/contact/' %}active{% endif %}" href="{% url 'contact' %}">
                   Contact us
                 </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_post">
-              <h5>
-                LATEST POSTS
-              </h5>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="{% static 'core/images/post1.jpg' %}" alt=""> 
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="{% static 'core/images/post2.jpg' %}" alt=""> 
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_post">
-              <h5>
-                News
-              </h5>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="{% static 'core/images/post3.jpg' %}" alt=""> 
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
-              </div>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="{% static 'core/images/post4.png' %}" alt=""> 
-                </div>
-                <p>
-                  Normal
-                  distribution
-                </p>
               </div>
             </div>
           </div>
@@ -238,8 +188,8 @@
   <footer class="footer_section">
     <div class="container">
       <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="#">Free Html Templates</a>
+        &copy; <span id="displayYear"></span> Página desarrollada por
+        <a href="https://github.com/xAd4">Ángel Estarita</a>
       </p>
     </div>
   </footer>

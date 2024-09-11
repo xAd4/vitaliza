@@ -22,7 +22,7 @@ class HomeTemplateView(TemplateView):
             appointment = form.save(commit=False)
             appointment.user = request.user
             appointment.save()
-            return redirect('home')
+            return redirect('status-200')
         return self.get(request, *args, **kwargs, form=form)
     
 class AboutTemplateView(TemplateView):

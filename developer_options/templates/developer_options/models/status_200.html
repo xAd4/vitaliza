@@ -1,0 +1,40 @@
+{% extends "core/base.html" %} 
+{% load static %}
+
+{% block content %}
+<!-- client section -->
+<section class="client_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        <span>Status 200</span>
+      </h2>
+    </div>
+  </div>
+  <div class="container px-0">
+    <div
+      id="customCarousel2"
+      class="carousel carousel-fade"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="box">
+            <div class="client_info">
+              <div class="client_name">
+                <h5>Su consulta ha sido enviada correctamente.</h5>
+                <h6>Gracias por elegirnos.</h6>
+              </div>
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+            </div>
+            <p>
+                Por favor, estar al tanto de su teléfono celular y de su correo electrónico. Nos pondremos en contacto con usted con la mayor brevedad posible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end client section -->
+{% endblock content %}

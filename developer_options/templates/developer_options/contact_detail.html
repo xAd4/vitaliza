@@ -1,0 +1,31 @@
+{% extends "core/base.html" %} 
+{% load static %}
+
+{% block content %}
+<!-- about section -->
+<section class="about_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="{% static 'core/images/about-img.jpg' %}" alt="" /> 
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <p> Detalles del <b>mensaje</b> enviado: <code>{{object.created_at}}</code></p>
+            <p>{{object.email}}</p>
+            <b>{{object.phone_number}}</b>
+            <h2>{{object.full_name}}</h2>
+          </div>
+          <p>
+            {{object.message}}
+          </p>
+          <a href="{% url 'contact-delete' object.id %}">Borrar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

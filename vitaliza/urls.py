@@ -20,6 +20,8 @@ from django.urls import path, include
 from core import urls
 ## Contact URLs
 from contact import urls
+## Developer Options URLs
+from developer_options import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +29,6 @@ urlpatterns = [
     path("", include("core.urls")),
     ## Contact URLs
     path("get_in_touch/", include("contact.urls")),
+    ## Developer Options URLs
+    path("developer_options/", include("developer_options.urls")),
 ]

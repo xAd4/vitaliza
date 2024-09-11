@@ -9,7 +9,7 @@ from .models import Contact
 class ContactFormView(FormView):
     template_name = "contact/contact.html"
     form_class = Contact_form
-    success_url = reverse_lazy("home")
+    success_url = reverse_lazy("status-200")
 
     def form_valid(self, form):
         # Crear una instancia del modelo Contact usando los datos del formulario

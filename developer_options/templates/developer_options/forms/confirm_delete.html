@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Page delete{% endblock %}
+{% block content %}
+<main role="main" class="mb-5 mt-5">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <div>
+            <form action="" method="post">{% csrf_token %}
+                <h2>¿Estás seguro de que quieres borrar "{{ object }}"?</h2>
+                <input class="btn btn-block mt-5" type="submit" value="Delete" />
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
