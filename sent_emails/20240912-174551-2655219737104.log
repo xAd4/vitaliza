@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: brotherhoodbta12@gmail.com
+Date: Thu, 12 Sep 2024 21:45:51 -0000
+Message-ID: <172617755109.12172.3525210687182721820@DESKTOP-C4S86O3>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/Mw/cd95cf-81f937d0a486a5db5eddb1391c478adf/
+
+Your username, in case you’ve forgotten: gabrielcardozo
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

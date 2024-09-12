@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'developer_options',
     'treatment',
     'about_us',
+    'social',
+    'forms',
 ]
 
 MIDDLEWARE = [

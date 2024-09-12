@@ -17,8 +17,13 @@
             <h2>{{object.title}}</h2>
           </div>
           <p>
-            {{object.content}}
+            {{object.content|linebreaksbr}}
           </p>
+          {% if request.user.is_staff %}
+          <a href="{% url 'about-update' object.id %}">
+            Actualizar
+          </a>
+          {% endif %}
         </div>
       </div>
     </div>

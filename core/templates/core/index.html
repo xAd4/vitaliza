@@ -14,22 +14,14 @@
           <div class="row">
             <div class="col-md-6">
               <div class="detail-box">
-                <div class="play_btn">
-                  <button>
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                  </button>
-                </div>
                 <h1>
                   Vitaliza <br>
                   <span>
                     Hospital
                   </span>
                 </h1>
-                <p>
-                  when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
-                </p>
                 <a href="{% url 'contact' %}">
-                  Contact Us
+                  Contáctanos
                 </a>
               </div>
             </div>
@@ -61,7 +53,7 @@
       <form method="post">
         {% csrf_token %}
         <h4>
-            BOOK <span>APPOINTMENT</span>
+            Reservar <span>cita</span>
         </h4>
         <div class="form-row">
             <div class="form-group col-lg-12">
@@ -133,7 +125,7 @@
 <div class="container">
   <div class="heading_container heading_center">
     <h2>
-      Hospital <span>Treatment</span>
+      Nuestros <span>servicios</span>
     </h2>
   </div>
   <div class="row">
@@ -166,7 +158,7 @@
 <div class="container">
   <div class="heading_container heading_center">
     <h2>
-      Our <span>Doctors</span>
+      Nuestro <span>personal</span>
     </h2>
   </div>
   <div class="carousel-wrap ">
@@ -182,9 +174,6 @@
             <h5>
               {{doctor.doctor_name}}
             </h5>
-            <h6>
-              MBBS
-            </h6>
             <div class="social_box">
               <a href="{{doctor.facebook}}">
                 <i class="fa fa-facebook" aria-hidden="true"></i>

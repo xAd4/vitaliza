@@ -1,6 +1,5 @@
 {% extends 'core/base.html' %}
 {% load static %}
-{% block title %}Log In{% endblock %}
 {% block content %}
 <br/>
 <br/>
@@ -13,7 +12,7 @@
         <form action="" method="post">{% csrf_token %}
           <h3 class="mb-4">Log In</h3>
           {% if form.non_field_errors %}
-            <p style="color:red">Incorrect user or password, try again.</p>
+            <p style="color:red">Usuario o contraseña incorrecta, intenta de nuevo.</p>
           {% endif %}
           <p>
             <input type="text" name="username" autofocus maxlength="254" required
@@ -25,8 +24,8 @@
           </p>
           <p><input type="submit" class="btn btn-primary btn-block mt-2" value="Log In"></p>
           <br/>
-          <p>Forgot your password? Click <a style="font-weight:bold;" href="{% url 'password_reset' %}">here</a></p>
-          <p>You dont have account? Click <a style="font-weight:bold;" href="{% url 'signup' %}">here</a></p>
+          <p>¿Olvidaste tu contraseña? Haz click <a style="font-weight:bold;" href="{% url 'password_reset' %}">aquí</a></p>
+          <p>¿No tienes una cuenta? Haz click <a style="font-weight:bold;" href="{% url 'signup' %}">aquí</a></p>
         </form>
       </div>
     </div>
