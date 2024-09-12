@@ -18,5 +18,5 @@ class Appointment(models.Model):
         verbose_name_plural = "Citas"
 
     def __str__(self):
-        return f"{self.full_name} - {self.doctor} - {self.department}"
+        return f"{self.full_name} - {self.department}"
     
