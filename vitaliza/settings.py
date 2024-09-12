@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'departments',
     'developer_options',
     'treatment',
+    'about_us',
 ]
 
 MIDDLEWARE = [

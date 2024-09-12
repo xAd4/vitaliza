@@ -26,6 +26,8 @@ from contact import urls
 from developer_options import urls
 ## Treatment URLs
 from treatment import urls
+## About Us URLs
+from about_us import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,6 +39,8 @@ urlpatterns = [
     path("developer_options/", include("developer_options.urls")),
     ## Treatment URLs
     path("treatment/", include("treatment.urls")),
+    ## About Us URLs
+    path("about/", include("about_us.urls")),
 ]
 
 if settings.DEBUG:

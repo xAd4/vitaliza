@@ -7,4 +7,4 @@ from .models import Treatment
 class TreatmentDetailView(DetailView):
     template_name = "treatment/treatment_detail.html"
     model = Treatment
-    context_object_name = "instance"
+    context_object_name = "treatment"

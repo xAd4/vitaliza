@@ -2,6 +2,7 @@ from django.shortcuts import redirect
 from django.views.generic import TemplateView
 from appointments.forms import Appointment_form
 from treatment.models import Treatment
+from about_us.models import AboutInfo
 
 # Create your views here.
 class HomeTemplateView(TemplateView):
@@ -10,7 +11,8 @@ class HomeTemplateView(TemplateView):
     def get_context_data(self, **kwargs): # -> This logic allows sent instances-model the model DeppartmentAppointment through that form
         context = super().get_context_data(**kwargs)
         context['form'] = Appointment_form()
-        context['instances'] = Treatment.objects.all() 
+        context['treatments'] = Treatment.objects.all()
+        context['about_us'] = AboutInfo.objects.all()
         return context
 
     def post(self, request, *args, **kwargs):
@@ -24,8 +26,3 @@ class HomeTemplateView(TemplateView):
             appointment.save()
             return redirect('status-200')
         return self.get(request, *args, **kwargs, form=form)
-    
-class AboutTemplateView(TemplateView):
-    template_name = "core/about.html"
-class DoctorTemplateView(TemplateView):
-    template_name = "core/doctor.html"

@@ -68,6 +68,7 @@
 <!-- about section -->
 
 <section class="about_section">
+  {% for about in about_us %}
 <div class="container  ">
   <div class="row">
     <div class="col-md-6 ">
@@ -79,19 +80,20 @@
       <div class="detail-box">
         <div class="heading_container">
           <h2>
-            About <span>Hospital</span>
+            {{about.title}} - <span>Vitaliza</span>
           </h2>
         </div>
         <p>
-          has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors
+          {{about.content|striptags|safe|truncatechars:"200"}}
         </p>
-        <a href="{% url 'about' %}">
-          Read More
+        <a href="{% url 'about-detail' about.id %}">
+          Leer más
         </a>
       </div>
     </div>
   </div>
 </div>
+{% endfor %}
 </section>
 
 <!-- end about section -->
@@ -110,7 +112,7 @@
     </h2>
   </div>
   <div class="row">
-    {% for treatment in instances %}
+    {% for treatment in treatments %}
     <div class="col-md-6 col-lg-3">
       <div class="box ">
         <div class="img-box">
