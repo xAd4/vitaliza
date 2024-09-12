@@ -1,5 +1,4 @@
-##Vitaliza
-Vitaliza es una plataforma web destinada a facilitar la comunicación entre pacientes y personal médico. Su enfoque principal es permitir a los usuarios enviar citas y mensajes para aclarar dudas, con la garantía de que un miembro capacitado del personal se pondrá en contacto con ellos.
+//Vitaliza es una plataforma web destinada a facilitar la comunicación entre pacientes y personal médico. Su enfoque principal es permitir a los usuarios enviar citas y mensajes para aclarar dudas, con la garantía de que un miembro capacitado del personal se pondrá en contacto con ellos.
 
 #Características
 Autenticación de Usuarios:
