@@ -14,14 +14,12 @@
       <div class="col-md-6">
         <div class="detail-box">
           <div class="heading_container">
-            <p> Detalles de la <b>cita</b> enviado: <code>{{object.created_at}}</code></p>
-            <b>{{object.phone_number}}</b>
-            <h2>{{object.full_name}}<span> | {{object.department}}</span></h2>
+            <img src="{{object.image.url}}" alt="" /> 
+            <h2 class="mt-3">{{object.title}}<span></h2>
           </div>
           <p>
-            {{object.symptoms}}
+            {{object.content}}
           </p>
-          <a href="{% url 'appointment-delete' object.id %}">Borrar</a>
         </div>
       </div>
     </div>

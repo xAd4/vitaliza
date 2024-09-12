@@ -16,12 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from vitaliza import settings
 ## Core URLs
 from core import urls
 ## Contact URLs
 from contact import urls
 ## Developer Options URLs
 from developer_options import urls
+## Treatment URLs
+from treatment import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +35,10 @@ urlpatterns = [
     path("get_in_touch/", include("contact.urls")),
     ## Developer Options URLs
     path("developer_options/", include("developer_options.urls")),
+    ## Treatment URLs
+    path("treatment/", include("treatment.urls")),
 ]
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

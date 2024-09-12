@@ -1,8 +1,7 @@
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView
 from appointments.forms import Appointment_form
-from appointments.models import Appointment
+from treatment.models import Treatment
 
 # Create your views here.
 class HomeTemplateView(TemplateView):
@@ -11,6 +10,7 @@ class HomeTemplateView(TemplateView):
     def get_context_data(self, **kwargs): # -> This logic allows sent instances-model the model DeppartmentAppointment through that form
         context = super().get_context_data(**kwargs)
         context['form'] = Appointment_form()
+        context['instances'] = Treatment.objects.all() 
         return context
 
     def post(self, request, *args, **kwargs):
@@ -32,6 +32,3 @@ class DoctorTemplateView(TemplateView):
 
 class TestimonialTemplateView(TemplateView):
     template_name = "core/testimonial.html"
-
-class TreatmentTemplateView(TemplateView):
-    template_name = "core/treatment.html"

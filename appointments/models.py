@@ -6,7 +6,6 @@ from departments.models import Deparment
 
 class Appointment(models.Model):
     full_name = models.CharField(max_length=100, verbose_name="Nombre del paciente")
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, verbose_name="Nombre del doctor deseado")
     department = models.ForeignKey(Deparment, on_delete=models.CASCADE, verbose_name="Nombre del departamento deseado")
     phone_number = models.CharField(max_length=100, verbose_name="Número de teléfono")
     symptoms = models.CharField(max_length=600, verbose_name="Síntomas")

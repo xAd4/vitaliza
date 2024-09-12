@@ -110,78 +110,23 @@
     </h2>
   </div>
   <div class="row">
+    {% for treatment in instances %}
     <div class="col-md-6 col-lg-3">
       <div class="box ">
         <div class="img-box">
-          <img src="{% static 'core/images/t1.png' %}" alt=""> 
+          <img src="{{treatment.image.url}}" alt=""> 
         </div>
         <div class="detail-box">
           <h4>
-            Nephrologist Care
+             {{treatment.title}}
           </h4>
-          <p>
-            alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
-          </p>
-          <a href="#">
-            Read More
+          <a href="{% url 'treatment-detail' treatment.id %}">
+            Leer más
           </a>
         </div>
       </div>
     </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="box ">
-        <div class="img-box">
-          <img src="{% static 'core/images/t2.png' %}" alt=""> 
-        </div>
-        <div class="detail-box">
-          <h4>
-            Eye Care
-          </h4>
-          <p>
-            alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
-          </p>
-          <a href="#">
-            Read More
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="box ">
-        <div class="img-box">
-          <img src="{% static 'core/images/t3.png' %}" alt=""> 
-        </div>
-        <div class="detail-box">
-          <h4>
-            Pediatrician Clinic
-          </h4>
-          <p>
-            alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
-          </p>
-          <a href="#">
-            Read More
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="box ">
-        <div class="img-box">
-          <img src="{% static 'core/images/t4.png' %}" alt=""> 
-        </div>
-        <div class="detail-box">
-          <h4>
-            Parental Care
-          </h4>
-          <p>
-            alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything
-          </p>
-          <a href="#">
-            Read More
-          </a>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
 </section>
