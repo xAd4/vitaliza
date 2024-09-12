@@ -1,6 +1,7 @@
-//Vitaliza es una plataforma web destinada a facilitar la comunicación entre pacientes y personal médico. Su enfoque principal es permitir a los usuarios enviar citas y mensajes para aclarar dudas, con la garantía de que un miembro capacitado del personal se pondrá en contacto con ellos.
+# Vitaliza
+Vitaliza es una plataforma web destinada a facilitar la comunicación entre pacientes y personal médico. Su enfoque principal es permitir a los usuarios enviar citas y mensajes para aclarar dudas, con la garantía de que un miembro capacitado del personal se pondrá en contacto con ellos.
 
-#Características
+Características
 Autenticación de Usuarios:
 
 Registro de nuevos usuarios.
@@ -22,25 +23,24 @@ Información de contacto de la empresa y su dirección.
 Instalación
 Sigue estos pasos para configurar el proyecto en tu entorno local:
 
-#Clona el Repositorio:
+## Clona el Repositorio:
 ```
 git clone https://github.com/tu_usuario/vitaliza.git
 cd vitaliza
 ```
 
 
-#Configura el Entorno Virtual:
+## Configura el Entorno Virtual:
 ```
 python -m venv venv
 source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
 ```
 
-#Instala las Dependencias
+## Instala las Dependencias
 ```
 pip install -r requirements.txt
 ```
-#Configura las Variables de Entorno:
-
+## Configura las Variables de Entorno:
 Crea un archivo .env en el directorio raíz del proyecto y añade las siguientes variables:
 ```
 DEBUG=True
@@ -51,14 +51,14 @@ PASSWORD=tu_contraseña
 HOST=localhost
 PORT=3306
 ```
-#Realiza las Migraciones y Carga Datos Iniciales:
+## Realiza las Migraciones y Carga Datos Iniciales:
 ```
 python manage.py migrate
 python manage.py loaddata initial_data
 ```
-#Ejecuta el Servidor de Desarrollo:
+## Ejecuta el Servidor de Desarrollo:
 ```
 python manage.py runserver
 ```
-#Licencia
+# Licencia
 Este proyecto está licenciado bajo los términos de la Licencia MIT.
