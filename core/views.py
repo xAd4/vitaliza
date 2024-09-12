@@ -29,6 +29,3 @@ class AboutTemplateView(TemplateView):
     template_name = "core/about.html"
 class DoctorTemplateView(TemplateView):
     template_name = "core/doctor.html"
-
-class TestimonialTemplateView(TemplateView):
-    template_name = "core/testimonial.html"
