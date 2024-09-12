@@ -55,7 +55,32 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      {% load appointment_form %} {% appointment_form %}
+      {% if request.user.is_authenticated %}
+            {% load appointment_form %} {% appointment_form %}
+      {% else %}
+      <form method="post">
+        {% csrf_token %}
+        <h4>
+            BOOK <span>APPOINTMENT</span>
+        </h4>
+        <div class="form-row">
+            <div class="form-group col-lg-12">
+            </div>
+            <div class="form-group col-lg-12">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-lg-12">
+            </div>
+            <div class="form-group col-lg-12">
+            </div>
+        </div>
+        <div class="btn-box">
+            <h4>Para agendar una cita, tiene que autenticarse.</h4>
+        </div>
+      </form>
+            
+      {% endif %}
     </div>
   </div>
 </div>

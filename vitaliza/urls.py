@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from vitaliza import settings
+## Authentication URLs
+from registration import urls
 ## Core URLs
 from core import urls
 ## Contact URLs
@@ -31,6 +33,9 @@ from about_us import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Authentication URLs
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("registration.urls")),
     ## Core URLs
     path("", include("core.urls")),
     ## Contact URLs

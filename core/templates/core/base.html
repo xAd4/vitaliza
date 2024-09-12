@@ -67,18 +67,31 @@
                 </ul>
               </div>
               <div class="quote_btn-container">
-                <a href="#">
+
+                {% if request.user.is_authenticated %}
+                
+                <li>
+                  <a href="#" onclick="document.getElementById('logout-form').submit();">Log Out <i></i></a>
+                  <form id="logout-form" method="post" action="{% url 'logout' %}" style="display: none;">
+                      {% csrf_token %}
+                  </form>
+              </li>
+                {% else %}
+                <a href="{% url 'login' %}">
                   <i class="fa fa-user" aria-hidden="true"></i>
                   <span>
                     Login
                   </span>
                 </a>
-                <a href="#">
+                <a href="{% url 'signup' %}">
                   <i class="fa fa-user" aria-hidden="true"></i>
                   <span>
                     Sign Up
                   </span>
                 </a>
+                {% endif %}
+
+
                 {% if request.user.is_staff %}
 
                 <a href="{% url 'appointment-messages' %}">
@@ -125,19 +138,19 @@
               <a href="{% url 'contact' %}">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Caracas, La Pastora. Esquina San José A Encarnación
                 </span>
               </a>
               <a href="{% url 'contact' %}">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Call 02128613802 - +58-4126052308
                 </span>
               </a>
               <a href="{% url 'contact' %}">
                 <i class="fa fa-envelope"></i>
                 <span>
-                  demo@gmail.com
+                  gabrielcardozo3579@gmail.com
                 </span>
               </a>
             </div>

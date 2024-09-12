@@ -1,6 +1,4 @@
-{% extends "core/base.html" %} 
-{% load static %}
-
+{% extends "core/base.html" %} {% load static %} 
 {% block content %}
 <!-- contact section -->
 <section class="contact_section layout_padding-bottom">
@@ -11,12 +9,21 @@
     <div class="row">
       <div class="col-md-7">
         <div class="form_container">
-          {% load contact_form %} {% contact_form %}
+          {% if request.user.is_authenticated %} 
+          {% load contact_form %} {% contact_form %} 
+          {% else %}
+          <form method="post">
+            {% csrf_token %}
+            <div class="btn_box">
+              <h4>Para enviar un mensaje, tiene que autenticarse.</h4>
+            </div>
+          </form>
+          {% endif %}
         </div>
       </div>
       <div class="col-md-5">
         <div class="img-box">
-          <img src="{% static 'core/images/contact-img.jpg' %}" alt="" /> 
+          <img src="{% static 'core/images/contact-img.jpg' %}" alt="" />
         </div>
       </div>
     </div>
